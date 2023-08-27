@@ -9,11 +9,6 @@ const Product=require('./Routes/product');
 const Cart=require('./Routes/Cart');
 const Order=require('./Routes/Order');
 const Stripe=require('./Routes/Stripe');
-app.use(cors({
-    origin:["https://woocommerce-rho.vercel.app"],
-    methods:["POST","GET","PUT"],
-    credentials:true
-}))
 const port=5000;
 connectDb();
 app.use(express.json());
