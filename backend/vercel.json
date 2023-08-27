@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "version": 2,
     "name": "music-album",
     "builds": [
@@ -19,3 +20,23 @@
         }
       ]
  }
+=======
+  "version": 2,
+  "builds": [
+    {
+      "src": "./index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "./index.js",
+      "methods": ["GET", "POST", "PUT"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  ]
+}
+>>>>>>> c30a278f6c0adb47e772dc716afc55b6dbb8501d
