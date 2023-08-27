@@ -9,7 +9,7 @@ const Product=require('./Routes/product');
 const Cart=require('./Routes/Cart');
 const Order=require('./Routes/Order');
 const Stripe=require('./Routes/Stripe');
-const port=5000;
+const port=process.env.PORT || 5000;
 connectDb();
 app.use(express.json());
 app.get('/',(req,res)=>{
