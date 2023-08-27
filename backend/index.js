@@ -10,7 +10,7 @@ const Cart=require('./Routes/Cart');
 const Order=require('./Routes/Order');
 const Stripe=require('./Routes/Stripe');
 app.use(cors({
-    origin:["https://woocommerce-rho.vercel.app"],
+    origin:["https://woocommerce-pe5h.vercel.app"],
     methods:["POST","GET","PUT"],
     credentials:true
 }))
