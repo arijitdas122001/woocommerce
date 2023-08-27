@@ -7,10 +7,6 @@ export const login=async(dispatch,user,password)=>{
       {
         username:user,
         password:password,
-      },{
-        headers:{
-          'Access-Control-Allow-Origin':'*',
-        }
       }
       );
       dispatch(loginSuccess(res.data));
