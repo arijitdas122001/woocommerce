@@ -25,7 +25,7 @@ router.post('/register',async(req,res)=>{
 })
 // Log In
 router.post('/login',async(req,res)=>{
-    // const {username}=req.body;
+    const {username}=req.body;
     try{
     let CurrUser=await User.findOne({username:username});
     if(!CurrUser){
