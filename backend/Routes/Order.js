@@ -39,7 +39,7 @@ router.delete('/delete/:id',verifyTokenAndAuthorization,async(req,res)=>{
     }
 });
 // GetAllorder
-router.get('/getAllorders',verifyTokenandAdmin,async(req,res)=>{
+router.get('/getAllorders',async(req,res)=>{
     try{
         const orders = await order.find();
         res.status(200).json(orders);
