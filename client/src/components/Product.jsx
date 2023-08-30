@@ -17,8 +17,8 @@ const Product = ({filters,sort,cat}) => {
   useEffect(()=>{
     const FetchAllData=async()=>{
       let res=await axios.get(
-        cat?`https://woocommerce-rho.vercel.app/api/prod/getAllProducts?category=${cat}`:
-        "https://woocommerce-rho.vercel.app/api/prod/getAllProducts");
+        cat?`https://backend-api-ycs4.onrender.com/api/prod/getAllProducts?category=${cat}`:
+        "https://backend-api-ycs4.onrender.com/api/prod/getAllProducts");
       setFetchedProducts(res.data);
     }
     FetchAllData();
