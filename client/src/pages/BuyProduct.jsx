@@ -123,7 +123,7 @@ const BuyProduct =() => {
   const [quantity,setQuantity]=useState(1);
   useEffect(()=>{
     const fetchSingleProduct=async()=>{
-      const res=await axios.get(`https://woocommerce-3mgdgc0ve-arijitdas122001.vercel.app/api/prod/getTheProduct/${ID}`);
+      const res=await axios.get(`https://backend-api-ycs4.onrender.com/api/prod/getTheProduct/${ID}`);
       setproduct(res.data);
     }
     fetchSingleProduct();
