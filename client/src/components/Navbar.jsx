@@ -123,12 +123,15 @@ const Navbar = () => {
           <UserProfile src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1693078952~exp=1693079552~hmac=467f2085c055a7a46eb9bc2d2326f42b88cc531d1016e187231a443d93656aaf"/>:
           <Menuitem onClick={()=>{red("/log-in")}}>Log In</Menuitem>
           }
+          {user?
           <Menuitem>
           <Stack spacing={2} direction="row">
       <Badge badgeContent={quantity} color="secondary">
       <ShoppingCartCheckoutIcon onClick={()=>red("/Cart")}/>
       </Badge>
     </Stack></Menuitem>
+    :<span></span>
+      }
         </Right>
       </Wrapper>
     </Container>

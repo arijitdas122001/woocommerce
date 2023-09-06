@@ -157,10 +157,11 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            {Cart.products.map((prod) => (
+            {
+            Cart.products.map((prod) => (
               <Product>
                 <ProductDetails>
-                  <Image src={prod.img} />
+                  <Image src={prod.img} />  
                   <Details>
                     <ProductName>
                       <b>Product:</b>

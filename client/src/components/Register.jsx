@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "styled-components";
+import { Signup } from '../Redux/apicalls_redux';
+import { useDispatch } from 'react-redux';
 const Container=styled.div`
 width: 100vw;
 height: 100vh;
@@ -48,27 +50,41 @@ background-color:teal;
 color: white;
 border: none;
 border-radius: 4px;
+
 &:hover{
   opacity: 0.8;
 }
 `;
-
+const Error=styled.span`
+  color: red;
+`;
 const Register = () => {
+  const [user,setuser]=useState("");
+  const [password,setpassword]=useState("");
+  const [email,setemail]=useState("");
+  const [cp,setcp]=useState("");
+  let dispatch=useDispatch();
+  const handleclick=(e)=>{
+    e.preventDefault();
+    Signup(dispatch,user,password,email);
+  }
   return (
     <Container>
     <Wrapper>
       <Title>Create An Account</Title>
         <Form>
-            <Input placeholder='Your Name(UserName)'/>
-            <Input placeholder='E-Mail'/>
-            <Input placeholder='Ph-No'/>
-            <Input placeholder='Password'/>
-            <Input placeholder='Confirm Password'/>
+            <Input placeholder='Your Name(UserName)' onChange={(event)=>{setuser(event.target.value)}}/>
+            <Input placeholder='E-Mail' onChange={(event)=>{setemail(event.target.value)}}/>
+            <Input placeholder='Password' type='password' onChange={(event)=>{setpassword(event.target.value)}}/>
+            <Input placeholder='Confirm Password' type='password' name='cp' onChange={(e)=>{setcp(e.target.value)}}/>
         </Form>
         <Consent>
           By Clicking Your are accepting our <b>Terms & Conditions</b> and <b>Security & Privacy Policy</b>
         </Consent>
-        <Button>Create Account</Button>
+        {password===cp?
+        <Button onClick={handleclick} >Create Account</Button>
+        :<Error>Please Confirm Your Password correctly</Error>
+}
     </Wrapper>
     </Container>
   )
